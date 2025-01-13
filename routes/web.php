@@ -6,6 +6,7 @@ use App\Http\Controllers\Dashboard\SectionController;
 use App\Http\Controllers\Dashboard\ClassroomController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use App\Http\Controllers\Dashboard\Teacher\TeacherController;
 
 
 
@@ -22,6 +23,7 @@ Route::prefix(LaravelLocalization::setLocale())->middleware(['localeSessionRedir
     Route::post('delete_all', [ClassroomController::class,'delete_all'])->name('classrooms.delete_all');
     Route::resource('sections', SectionController::class);
     Route::get('/classes/{id}', [SectionController::class,'getclasses'])->name('sections.getclasses');
+    Route::resource('teachers', TeacherController::class);
 
     });
 
