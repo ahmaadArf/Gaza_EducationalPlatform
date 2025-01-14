@@ -381,6 +381,8 @@
         </div>
     </div>
 </div>
+</div>
+</div>
 <!-- row closed -->
 @endsection
 @section('js')
