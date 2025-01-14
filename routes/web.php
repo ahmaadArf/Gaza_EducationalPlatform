@@ -28,4 +28,4 @@ Route::prefix(LaravelLocalization::setLocale())->middleware(['localeSessionRedir
     });
 
 });
-//test name
+
