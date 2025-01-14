@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Models\Grade;
 use App\Models\Section;
+use App\Models\Teacher;
 use App\Models\Classroom;
 use App\Http\Requests\SectionRole;
 use App\Http\Controllers\Controller;
@@ -13,7 +14,8 @@ class SectionController extends Controller
     public function index(){
         $Grades = Grade::with(['Sections'])->get();
         $list_Grades = Grade::all();
-        return view('pages.Sections.index',compact('Grades','list_Grades'));
+        $teachers = Teacher::all();
+        return view('pages.Sections.index',compact('Grades','list_Grades','teachers'));
 
     }
     public function getclasses($id)
@@ -25,13 +27,14 @@ class SectionController extends Controller
     public function store(SectionRole $request)
    {
         $request->validated();
-        Section::create([
+        $section=  Section::create([
             'name'=>['ar' => $request->Name_Section_Ar, 'en' => $request->Name_Section_En],
             'grade_id'=>$request->Grade_id,
             'class_id'=>$request->Class_id,
             'status'=>1
         ]);
 
+        $section->teachers()->attach($request->teacher_id);
 
         return redirect()->route('dashboard.sections.index')->
             with('msg', trans('messages.success'))->with('type', 'success');
@@ -51,6 +54,8 @@ class SectionController extends Controller
         'status'=>$status
 
         ]);
+
+        $section->teachers()->sync($request->teacher_id);
 
         return redirect()->route('dashboard.sections.index')->
         with('msg', trans('messages.Update'))->with('type', 'success');

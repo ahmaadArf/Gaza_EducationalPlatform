@@ -30,14 +30,13 @@
                     <div class="col-md-12">
                         <br>
                         <form action="{{ route('dashboard.teachers.update', 'test') }}" method="post">
-                            {{-- {{ method_field('patch') }} --}}
                             @method('put')
                             @csrf
                             <div class="form-row">
                                 <div class="col">
                                     <label for="title">{{ trans('Teacher_trans.Email') }}</label>
                                     <input type="hidden" value="{{ $teacher->id }}" name="id">
-                                    <input type="email" name="Email" value="{{ $teacher->Email }}"
+                                    <input type="email" name="Email" value="{{ $teacher->email }}"
                                         class="form-control">
                                     @error('Email')
                                         <div class="alert alert-danger">{{ $message }}</div>
@@ -45,7 +44,7 @@
                                 </div>
                                 <div class="col">
                                     <label for="title">{{ trans('Teacher_trans.Password') }}</label>
-                                    <input type="password" name="Password" value="{{ $teacher->Password }}"
+                                    <input type="password" name="Password" value="{{ $teacher->password }}"
                                         class="form-control">
                                     @error('Password')
                                         <div class="alert alert-danger">{{ $message }}</div>
@@ -78,10 +77,10 @@
                                 <div class="form-group col">
                                     <label for="inputCity">{{ trans('Teacher_trans.specialization') }}</label>
                                     <select class="custom-select my-1 mr-sm-2" name="Specialization_id">
-                                        <option value="{{ $teacher->Specialization_id }}">
-                                            {{ $teacher->specializations->Name }}</option>
+                                        <option value="{{ $teacher->specialization_id }}">
+                                            {{ $teacher->specializations->name }}</option>
                                         @foreach ($specializations as $specialization)
-                                            <option value="{{ $specialization->id }}">{{ $specialization->Name }}
+                                            <option value="{{ $specialization->id }}">{{ $specialization->name }}
                                             </option>
                                         @endforeach
                                     </select>
@@ -92,10 +91,10 @@
                                 <div class="form-group col">
                                     <label for="inputState">{{ trans('Teacher_trans.Gender') }}</label>
                                     <select class="custom-select my-1 mr-sm-2" name="Gender_id">
-                                        <option value="{{ $teacher->Gender_id }}">{{ $teacher->genders->Name }}
+                                        <option value="{{ $teacher->gender_id }}">{{ $teacher->genders->name }}
                                         </option>
                                         @foreach ($genders as $gender)
-                                            <option value="{{ $gender->id }}">{{ $gender->Name }}</option>
+                                            <option value="{{ $gender->id }}">{{ $gender->name }}</option>
                                         @endforeach
                                     </select>
                                     @error('Gender_id')
@@ -110,7 +109,7 @@
                                     <label for="title">{{ trans('Teacher_trans.Joining_Date') }}</label>
                                     <div class='input-group date'>
                                         <input class="form-control" type="text" id="datepicker-action"
-                                            value="{{ $teacher->Joining_Date }}" name="Joining_Date"
+                                            value="{{ $teacher->joining_Date }}" name="Joining_Date"
                                             data-date-format="yyyy-mm-dd" required>
                                     </div>
                                     @error('Joining_Date')
@@ -122,7 +121,7 @@
 
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">{{ trans('Teacher_trans.Address') }}</label>
-                                <textarea class="form-control" name="Address" id="exampleFormControlTextarea1" rows="4">{{ $teacher->Address }}</textarea>
+                                <textarea class="form-control" name="Address" id="exampleFormControlTextarea1" rows="4">{{ $teacher->address }}</textarea>
                                 @error('Address')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror

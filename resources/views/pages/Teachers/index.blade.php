@@ -37,7 +37,7 @@
                                             <th>{{ trans('Teacher_trans.Gender') }}</th>
                                             <th>{{ trans('Teacher_trans.Joining_Date') }}</th>
                                             <th>{{ trans('Teacher_trans.specialization') }}</th>
-                                            <th>العمليات</th>
+                                            <th>{{ trans('Teacher_trans.Processes') }}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -47,9 +47,9 @@
                                                 <?php $i++; ?>
                                                 <td>{{ $i }}</td>
                                                 <td>{{ $teacher->name }}</td>
-                                                <td>{{ $teacher->genders->Name }}</td>
-                                                <td>{{ $teacher->Joining_Date }}</td>
-                                                <td>{{ $teacher->specializations->Name }}</td>
+                                                <td>{{ $teacher->genders->name }}</td>
+                                                <td>{{ $teacher->joining_Date }}</td>
+                                                <td>{{ $teacher->specializations->name }}</td>
                                                 <td>
                                                     <a href="{{ route('dashboard.teachers.edit', $teacher->id) }}"
                                                         class="btn btn-info btn-sm" role="button"
@@ -82,7 +82,7 @@
                                                                 </button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                <p> {{ trans('My_Classes_trans.Warning_Grade') }}</p>
+                                                                <p> {{ trans('Teacher_trans.DeleteTeacher') }}</p>
                                                                 <input type="hidden" name="id"
                                                                     value="{{ $teacher->id }}">
                                                             </div>

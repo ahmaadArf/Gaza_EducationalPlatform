@@ -16,11 +16,11 @@ class Teacher extends Model
 
     public function specializations()
     {
-        return $this->belongsTo(Specialization::class, 'Specialization_id');
+        return $this->belongsTo(Specialization::class, 'specialization_id');
     }
     public function genders()
     {
-        return $this->belongsTo(Gender::class, 'Gender_id');
+        return $this->belongsTo(Gender::class, 'gender_id');
     }
     public function Sections()
     {

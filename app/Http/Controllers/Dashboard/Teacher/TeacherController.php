@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard\Teacher;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\TeacherRole;
 use App\Http\Controllers\Controller;
 use App\Repository\TeacherRepositoryInterface;
 
@@ -37,7 +38,7 @@ class TeacherController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(TeacherRole $request)
     {
         return $this->teacher->StoreTeachers($request);
 
@@ -65,7 +66,7 @@ class TeacherController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(TeacherRole $request, string $id)
     {
         return $this->teacher->UpdateTeachers($request);
 
