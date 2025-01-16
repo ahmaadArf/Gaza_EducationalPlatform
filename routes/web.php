@@ -28,4 +28,10 @@ Route::prefix(LaravelLocalization::setLocale())->middleware(['localeSessionRedir
     });
 
 });
+Route::get('ar/dashboard/add_parent', function () {
+    return view('livewire.show_Form');
+})->middleware('auth')->name('add_parent_ar');
+Route::get('en/dashboard/add_parent', function () {
+    return view('livewire.show_Form');
+})->middleware('auth')->name('add_parent_en');
 
