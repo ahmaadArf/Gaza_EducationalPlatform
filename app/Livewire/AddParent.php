@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AddParent extends Component
 {
-    use WithFileUploads;
+
 
     public $successMessage = '';
 
