@@ -41,7 +41,6 @@
             </ul>
         </li>
 
-
         <!-- sections-->
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#sections-menu">
@@ -55,7 +54,6 @@
                 </li>
             </ul>
         </li>
-
 
         <!-- Teachers-->
         <li>
@@ -86,8 +84,59 @@
             <ul id="Parents-menu" class="collapse" data-parent="#sidebarnav">
                 <li> <a href="{{ route( $route) }}">{{ trans('main_trans.List_Parents') }}</a> </li>
             </ul>
-        </li
+        </li>
 
+        <!-- students-->
+        <li>
+            <a href="javascript:void(0);" data-toggle="collapse" data-target="#students-menu">
+                <div class="pull-left"><i class="fas fa-user"></i><span
+                        class="right-nav-text">{{ trans('main_trans.students') }}</span></div>
+                <div class="pull-right"><i class="ti-plus"></i></div>
+                <div class="clearfix"></div>
+            </a>
+            <ul id="students-menu" class="collapse" data-parent="#sidebarnav">
+                <li> <a
+                        href="{{ route('dashboard.students.create') }}">{{ trans('main_trans.add_student') }}</a>
+                </li>
+                <li> <a
+                        href="{{ route('dashboard.students.index') }}">{{ trans('main_trans.list_students') }}</a>
+                </li>
+
+
+            </ul>
+        </li>
+
+        <li>
+            <a href="javascript:void(0);" data-toggle="collapse" data-target="#pro-menu">
+                <div class="pull-left"><i class="fas fa-chalkboard-teacher"></i></i><span
+                        class="right-nav-text"> ترقية الطلاب</span></div>
+                <div class="pull-right"><i class="ti-plus"></i></div>
+                <div class="clearfix"></div>
+            </a>
+            <ul id="pro-menu" class="collapse" data-parent="#sidebarnav">
+                <li> <a href="{{ route('dashboard.promotions.index') }}">{{ trans('main_trans.Students_Promotions') }}  </a>
+                </li>
+                <li> <a href="{{ route('dashboard.promotions.create') }}">ادارة ترقية الطلاب</a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="javascript:void(0);" data-toggle="collapse"
+                data-target="#Graduate students"><i class="fas fa-user-graduate"></i><span
+                class="right-nav-text">{{ trans('main_trans.Graduate_students') }}</span><div
+                    class="pull-right"><i class="ti-plus"></i></div>
+                <div class="clearfix"></div>
+            </a>
+            <ul id="Graduate students" class="collapse">
+                <li> <a
+                        href="{{ route('dashboard.graduated.create') }}">{{ trans('main_trans.add_Graduate') }}</a>
+                </li>
+                <li> <a
+                        href="{{ route('dashboard.graduated.index') }}">{{ trans('main_trans.list_Graduate') }}</a>
+                </li>
+            </ul>
+        </li>
 
 
     </ul>

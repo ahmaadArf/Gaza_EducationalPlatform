@@ -7,6 +7,9 @@ use App\Http\Controllers\Dashboard\ClassroomController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\Dashboard\Teacher\TeacherController;
+use App\Http\Controllers\Dashboard\Students\StudentController;
+use App\Http\Controllers\Dashboard\Students\GraduatedController;
+use App\Http\Controllers\Dashboard\Students\PromotionController;
 
 
 
@@ -24,6 +27,15 @@ Route::prefix(LaravelLocalization::setLocale())->middleware(['localeSessionRedir
     Route::resource('sections', SectionController::class);
     Route::get('/classes/{id}', [SectionController::class,'getclasses'])->name('sections.getclasses');
     Route::resource('teachers', TeacherController::class);
+    Route::resource('students', StudentController::class);
+    Route::get('/Get_classrooms/{id}', [StudentController::class,'Get_classrooms']);
+    Route::get('/Get_Sections/{id}', [StudentController::class,'Get_Sections']);
+    Route::post('Upload_attachment', [StudentController::class,'Upload_attachment'])->name('students.Upload_attachment');
+    Route::get('Download_attachment/{studentsname}/{filename}',[StudentController::class,'Download_attachment'])->name('students.Download_attachment');
+    Route::post('Delete_attachment', [StudentController::class,'Delete_attachment'])->name('students.Delete_attachment');
+    Route::resource('promotions', PromotionController::class);
+    Route::delete('promotion/delete-all',[PromotionController::class,'destroyAllStudents'])->name('promotions.destroyAllStudents');
+    Route::resource('graduated', GraduatedController::class);
 
     });
 
