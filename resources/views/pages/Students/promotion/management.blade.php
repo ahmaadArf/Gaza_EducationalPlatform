@@ -22,7 +22,7 @@
                             <div class="card-body">
 
                                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#Delete_allStudents">
-                                   تراجع الكل
+                                    {{ __('promotions.undo_all') }}
                                 </button>
                                 <!-- Deleted inFormation Student -->
 
@@ -38,14 +38,14 @@
                                         <tr>
                                             <th class="alert-info">#</th>
                                             <th class="alert-info">{{trans('Students_trans.name')}}</th>
-                                            <th class="alert-danger">المرحلة الدراسية السابقة</th>
-                                            <th class="alert-danger">السنة الدراسية</th>
-                                            <th class="alert-danger">الصف الدراسي السابق</th>
-                                            <th class="alert-danger">القسم الدراسي السابق</th>
-                                            <th class="alert-success">المرحلة الدراسية الحالي</th>
-                                            <th class="alert-success">السنة الدراسية الحالية</th>
-                                            <th class="alert-success">الصف الدراسي الحالي</th>
-                                            <th class="alert-success">القسم الدراسي الحالي</th>
+                                            <th class="alert-danger">{{ __('promotions.previous_educational_stage') }}</th>
+                                            <th class="alert-danger"> {{ __('promotions.previous_academic_year') }}</th>
+                                            <th class="alert-danger">{{ __('promotions.previous_grade') }}  </th>
+                                            <th class="alert-danger">{{ __('promotions.previous_section') }}  </th>
+                                            <th class="alert-success">{{ __('promotions.current_educational_stage') }}  </th>
+                                            <th class="alert-success">{{ __('promotions.current_academic_year') }}  </th>
+                                            <th class="alert-success">{{ __('promotions.current_grade') }}  </th>
+                                            <th class="alert-success">{{ __('promotions.current_section') }}  </th>
                                             <th>{{trans('Students_trans.Processes')}}</th>
                                         </tr>
                                         </thead>
@@ -64,8 +64,8 @@
                                                 <td>{{$promotion->t_section->name}}</td>
                                                 <td>
 
-                                                    <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#Delete_one{{$promotion->id}}">ارجاع الطالب</button>
-                                                    <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#Graduated">تخرج الطالب</button>
+                                                    <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#Delete_one{{$promotion->id}}">{{ __('promotions.return_student') }}  </button>
+                                                    <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#Graduated">{{ __('promotions.graduate_student') }}  </button>
                                                 </td>
                                             </tr>
                                         @include('pages.Students.promotion.delete_one')

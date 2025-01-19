@@ -109,14 +109,14 @@
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#pro-menu">
                 <div class="pull-left"><i class="fas fa-chalkboard-teacher"></i></i><span
-                        class="right-nav-text"> ترقية الطلاب</span></div>
+                        class="right-nav-text">  {{ trans('main_trans.Students_Promotions') }}</span></div>
                 <div class="pull-right"><i class="ti-plus"></i></div>
                 <div class="clearfix"></div>
             </a>
             <ul id="pro-menu" class="collapse" data-parent="#sidebarnav">
                 <li> <a href="{{ route('dashboard.promotions.index') }}">{{ trans('main_trans.Students_Promotions') }}  </a>
                 </li>
-                <li> <a href="{{ route('dashboard.promotions.create') }}">ادارة ترقية الطلاب</a>
+                <li> <a href="{{ route('dashboard.promotions.create') }}">{{ trans('promotions.list_Promotions') }}   </a>
                 </li>
             </ul>
         </li>
@@ -130,10 +130,10 @@
             </a>
             <ul id="Graduate students" class="collapse">
                 <li> <a
-                        href="{{ route('dashboard.graduated.create') }}">{{ trans('main_trans.add_Graduate') }}</a>
+                        href="{{ route('dashboard.graduated.create') }}">{{ trans('graduate.add_Graduate') }}</a>
                 </li>
                 <li> <a
-                        href="{{ route('dashboard.graduated.index') }}">{{ trans('main_trans.list_Graduate') }}</a>
+                        href="{{ route('dashboard.graduated.index') }}">{{ trans('graduate.list_Graduate') }}</a>
                 </li>
             </ul>
         </li>

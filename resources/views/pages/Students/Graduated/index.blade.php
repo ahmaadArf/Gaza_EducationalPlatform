@@ -1,13 +1,13 @@
 @extends('layouts.master')
 @section('css')
 @section('title')
-    {{trans('main_trans.list_Graduate')}}
+    {{trans('graduate.list_Graduate')}}
 @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
 @section('PageTitle')
-    {{trans('main_trans.list_Graduate')}} <i class="fas fa-user-graduate"></i>
+    {{trans('graduate.list_Graduate')}} <i class="fas fa-user-graduate"></i>
 @stop
 <!-- breadcrumb -->
 @endsection
@@ -52,8 +52,8 @@
                                             <td>{{$student->classroom->name}}</td>
                                             <td>{{$student->section->name}}</td>
                                                 <td>
-                                                    <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#Return_Student{{ $student->id }}" title="{{ trans('Grades_trans.return') }}">ارجاع الطالب</button>
-                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#Delete_Student{{ $student->id }}" title="{{ trans('Grades_trans.Delete') }}">حذف الطالب</button>
+                                                    <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#Return_Student{{ $student->id }}" title="{{ trans('Grades_trans.return') }}">{{ __('graduate.return_student') }} </button>
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#Delete_Student{{ $student->id }}" title="{{ trans('Grades_trans.Delete') }}">{{ __('graduate.delete_student') }} </button>
 
                                                 </td>
                                             </tr>

@@ -1,13 +1,13 @@
 @extends('layouts.master')
 @section('css')
 @section('title')
-    {{trans('main_trans.add_Graduate')}}
+    {{trans('graduate.add_Graduate')}}
 @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
 @section('PageTitle')
-    {{trans('main_trans.add_Graduate')}}
+    {{trans('graduate.add_Graduate')}}
 @stop
 <!-- breadcrumb -->
 @endsection
@@ -57,7 +57,7 @@
 
                         </div>
 
-                        <button type="submit" class="btn btn-primary">تاكيد</button>
+                        <button type="submit" class="btn btn-primary">{{ __('My_Classes_trans.submit') }}</button>
                     </form>
 
                 </div>

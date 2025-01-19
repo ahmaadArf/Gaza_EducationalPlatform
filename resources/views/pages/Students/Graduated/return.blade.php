@@ -3,7 +3,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title" id="exampleModalLabel">ارجاع طالب</h5>
+                <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title" id="exampleModalLabel">{{ __('graduate.return_student') }}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -12,7 +12,7 @@
                 <form action="{{route('dashboard.graduated.update',$student->id)}}" method="post" autocomplete="off">
                     @method('PUT')
                     @csrf
-                    <h5 style="font-family: 'Cairo', sans-serif;">هل انت متاكد من الغاء عملية التخرج ؟</h5>
+                    <h5 style="font-family: 'Cairo', sans-serif;">{{ __('graduate.confirm_graduation_cancellation') }}</h5>
                     <input type="text" readonly value="{{$student->name}}" class="form-control">
 
                     <div class="modal-footer">
