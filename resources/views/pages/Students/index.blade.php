@@ -72,7 +72,10 @@
                                                                 href="{{ route('dashboard.graduated.edit', $student->id) }}"><i
                                                                     style="color:green" class="fas fa-sign-out-alt"></i>&nbsp;
                                                                     {{ __('Students_trans.graduate_student') }} </a>
-
+                                                                    <a class="dropdown-item" href="{{route('dashboard.fees_Invoices.show',$student->id)}}"><i style="color: #0000cc" class="fa fa-edit"></i>&nbsp; {{ __('Students_trans.add_fee_invoice') }}  &nbsp;</a>
+                                                                    <a class="dropdown-item" href="{{route('dashboard.receipt_students.show',$student->id)}}"><i style="color: #9dc8e2" class="fas fa-money-bill-alt"></i>&nbsp; &nbsp;{{ __('Students_trans.receipt_voucher') }}  </a>
+                                                                    <a class="dropdown-item" href="{{route('dashboard.processingFee.show',$student->id)}}"><i style="color: #9dc8e2" class="fas fa-money-bill-alt"></i>&nbsp; &nbsp;  {{ __('Students_trans.fee_scheduling') }} </a>
+                                                                    <a class="dropdown-item" href="{{route('dashboard.payment_students.show',$student->id)}}"><i style="color:goldenrod" class="fas fa-donate"></i>&nbsp; &nbsp; {{ __('Students_trans.disbursement_voucher') }}</a>
                                                             <a class="dropdown-item"
                                                                 data-target="#Delete_Student{{ $student->id }}"
                                                                 data-toggle="modal"

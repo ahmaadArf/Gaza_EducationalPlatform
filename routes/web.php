@@ -8,8 +8,13 @@ use App\Http\Controllers\Dashboard\DashboardController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\Dashboard\Teacher\TeacherController;
 use App\Http\Controllers\Dashboard\Students\StudentController;
+use App\Http\Controllers\Dashboard\Students\Fees\FeesController;
 use App\Http\Controllers\Dashboard\Students\GraduatedController;
 use App\Http\Controllers\Dashboard\Students\PromotionController;
+use App\Http\Controllers\Dashboard\Students\Fees\PaymentController;
+use App\Http\Controllers\Dashboard\Students\Fees\FeesInvoicesController;
+use App\Http\Controllers\Dashboard\Students\Fees\ProcessingFeeController;
+use App\Http\Controllers\Dashboard\Students\Fees\ReceiptStudentController;
 
 
 
@@ -36,6 +41,11 @@ Route::prefix(LaravelLocalization::setLocale())->middleware(['localeSessionRedir
     Route::resource('promotions', PromotionController::class);
     Route::delete('promotion/delete-all',[PromotionController::class,'destroyAllStudents'])->name('promotions.destroyAllStudents');
     Route::resource('graduated', GraduatedController::class);
+    Route::resource('fees', FeesController::class);
+    Route::resource('fees_Invoices', FeesInvoicesController::class);
+    Route::resource('receipt_students', ReceiptStudentController::class);
+    Route::resource('processingFee', ProcessingFeeController::class);
+    Route::resource('payment_students', PaymentController::class);
 
     });
 

@@ -9,6 +9,7 @@ use App\Models\Section;
 use App\Models\MyParent;
 use App\Models\Classroom;
 use App\Models\Nationalitie;
+use App\Models\StudentAccount;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -48,5 +49,9 @@ class Student extends Model
     public function images()
     {
         return $this->morphMany(Image::class, 'imageable');
+    }
+    public function student_account()
+    {
+        return $this->hasMany(StudentAccount::class, 'student_id');
     }
 }

@@ -39,7 +39,7 @@ return [
     'graduate_student' => 'تخرج الطالب',
     'add_fee_invoice' => 'إضافة فاتورة رسوم',
     'receipt_voucher' => 'سند قبض',
-    'fee_scheduling' => 'إسكيجول رسوم',
+    'fee_scheduling' => 'استبعاد رسوم',
     'disbursement_voucher' => 'سند صرف',
     'delete_student_data' => 'حذف بيانات الطالب',
     'operations'=>'العمليات'
