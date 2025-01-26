@@ -8,6 +8,7 @@ use App\Models\Gender;
 use App\Models\Section;
 use App\Models\MyParent;
 use App\Models\Classroom;
+use App\Models\Attendance;
 use App\Models\Nationalitie;
 use App\Models\StudentAccount;
 use Illuminate\Database\Eloquent\Model;
@@ -53,5 +54,9 @@ class Student extends Model
     public function student_account()
     {
         return $this->hasMany(StudentAccount::class, 'student_id');
+    }
+    public function attendance()
+    {
+        return $this->hasMany(Attendance::class, 'student_id');
     }
 }

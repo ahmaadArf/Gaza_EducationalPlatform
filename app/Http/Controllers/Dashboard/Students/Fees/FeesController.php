@@ -25,7 +25,7 @@ class FeesController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(StoreFeesRequest  $request)
     {
         try {
 
