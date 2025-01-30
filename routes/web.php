@@ -6,9 +6,11 @@ use App\Http\Controllers\Dashboard\SectionController;
 use App\Http\Controllers\Dashboard\SubjectController;
 use App\Http\Controllers\Dashboard\ClassroomController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\Teacher\QuizzeController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\Dashboard\Teacher\TeacherController;
 use App\Http\Controllers\Dashboard\Students\StudentController;
+use App\Http\Controllers\Dashboard\Teacher\QuestionController;
 use App\Http\Controllers\Dashboard\Students\Fees\FeesController;
 use App\Http\Controllers\Dashboard\Students\GraduatedController;
 use App\Http\Controllers\Dashboard\Students\PromotionController;
@@ -50,6 +52,8 @@ Route::prefix(LaravelLocalization::setLocale())->middleware(['localeSessionRedir
     Route::resource('payment_students', PaymentController::class);
     Route::resource('attendance', AttendanceController::class);
     Route::resource('subjects', SubjectController::class);
+    Route::resource('quizzes', QuizzeController::class);
+    Route::resource('questions', QuestionController::class);
 
     });
 
