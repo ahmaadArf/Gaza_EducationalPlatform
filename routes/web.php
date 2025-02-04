@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard\GradeController;
+use App\Http\Controllers\Dashboard\LibraryController;
 use App\Http\Controllers\Dashboard\SectionController;
 use App\Http\Controllers\Dashboard\SubjectController;
 use App\Http\Controllers\Dashboard\ClassroomController;
@@ -15,6 +16,7 @@ use App\Http\Controllers\Dashboard\Students\Fees\FeesController;
 use App\Http\Controllers\Dashboard\Students\GraduatedController;
 use App\Http\Controllers\Dashboard\Students\PromotionController;
 use App\Http\Controllers\Dashboard\Students\AttendanceController;
+use App\Http\Controllers\Dashboard\Teacher\OnlineClasseController;
 use App\Http\Controllers\Dashboard\Students\Fees\PaymentController;
 use App\Http\Controllers\Dashboard\Students\Fees\FeesInvoicesController;
 use App\Http\Controllers\Dashboard\Students\Fees\ProcessingFeeController;
@@ -54,6 +56,9 @@ Route::prefix(LaravelLocalization::setLocale())->middleware(['localeSessionRedir
     Route::resource('subjects', SubjectController::class);
     Route::resource('quizzes', QuizzeController::class);
     Route::resource('questions', QuestionController::class);
+    Route::resource('online_classes', OnlineClasseController::class);
+    Route::resource('library', LibraryController::class);
+    Route::get('download_file/{filename}', [LibraryController::class,'downloadAttachment'])->name('downloadAttachment');
 
     });
 
