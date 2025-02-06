@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard\GradeController;
 use App\Http\Controllers\Dashboard\LibraryController;
 use App\Http\Controllers\Dashboard\SectionController;
+use App\Http\Controllers\Dashboard\SettingController;
 use App\Http\Controllers\Dashboard\SubjectController;
 use App\Http\Controllers\Dashboard\ClassroomController;
 use App\Http\Controllers\Dashboard\DashboardController;
@@ -59,6 +60,7 @@ Route::prefix(LaravelLocalization::setLocale())->middleware(['localeSessionRedir
     Route::resource('online_classes', OnlineClasseController::class);
     Route::resource('library', LibraryController::class);
     Route::get('download_file/{filename}', [LibraryController::class,'downloadAttachment'])->name('downloadAttachment');
+    Route::resource('settings', SettingController::class);
 
     });
 

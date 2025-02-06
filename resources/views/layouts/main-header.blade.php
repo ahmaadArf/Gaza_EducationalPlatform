@@ -118,10 +118,16 @@ header start-->
                     </div>
                 </div>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#"><i class="text-warning ti-user"></i>Profile</a>
                 @php
                     $type='web';
                 @endphp
+                @if ($type=='web')
+                     <a class="dropdown-item" href="{{ route('dashboard.settings.index') }}"><i class="fas fa-cogs"></i>{{ trans('main_trans.Settings') }}</a>
+                @else
+                    <a class="dropdown-item" href="{{ route('dashboard.settings.index') }}"><i class="text-warning ti-user"></i>Profile</a>
+
+                @endif
+
                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="text-danger ti-unlock"></i>{{ __('Sidebar_trans.Logoff') }}</a>
                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     <input type="hidden" name='type' value={{ $type }}>

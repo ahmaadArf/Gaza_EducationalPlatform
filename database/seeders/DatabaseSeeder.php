@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Database\Seeder;
 use Database\Seeders\GenderTableSeeder;
 use Database\Seeders\ReligionTableSeeder;
+use Database\Seeders\SettingsTableSeeder;
 use Database\Seeders\TypeBloodTableSeeder;
 use Database\Seeders\NationalitiesTableSeeder;
 use Database\Seeders\SpecializationsTableSeeder;
@@ -21,8 +22,9 @@ class DatabaseSeeder extends Seeder
 
         // $this->call(GenderTableSeeder::class);
         // $this->call(SpecializationsTableSeeder::class);
-        $this->call(TypeBloodTableSeeder::class);
-        $this->call(NationalitiesTableSeeder::class);
-        $this->call(ReligionTableSeeder::class);
+        // $this->call(TypeBloodTableSeeder::class);
+        // $this->call(NationalitiesTableSeeder::class);
+        // $this->call(ReligionTableSeeder::class);
+        $this->call(SettingsTableSeeder::class);
     }
 }

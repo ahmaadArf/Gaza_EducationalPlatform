@@ -220,6 +220,12 @@
             </ul>
         </li>
 
+        <!-- Settings-->
+        <li>
+            <a href="{{ route('dashboard.settings.index') }}"><i class="fas fa-cogs"></i><span
+                    class="right-nav-text">{{ trans('main_trans.Settings') }} </span></a>
+        </li>
+
 
 
     </ul>
