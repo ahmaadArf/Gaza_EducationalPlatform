@@ -52,6 +52,7 @@ return [
     'classroom' => 'الصف الدراسي',
     'section' => 'القسم',
     'date_added' => 'تاريخ الإضافة',
+    'welcome'=>'مرحبا بك',
     // معلومات المعلمين
     'teacher_name' => 'اسم المعلم',
     'hiring_date' => 'تاريخ التعيين',

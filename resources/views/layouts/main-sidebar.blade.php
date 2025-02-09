@@ -7,6 +7,10 @@
                 @include('layouts.main-sidebar.admin-main-sidebar')
             @endif
 
+            @if (auth('teacher')->check())
+                @include('layouts.main-sidebar.teacher-main-sidebar')
+            @endif
+
 
 
         </div>

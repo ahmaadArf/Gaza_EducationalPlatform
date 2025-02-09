@@ -7,8 +7,9 @@ use App\Models\Section;
 use App\Models\Specialization;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Teacher extends Model
+class Teacher extends Authenticatable
 {
     use HasTranslations;
     public $translatable = ['name'];

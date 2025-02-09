@@ -120,11 +120,14 @@ header start-->
                 <div class="dropdown-divider"></div>
                 @php
                     $type='web';
+
+                    if(Auth::guard('teacher')->check())$type='teacher';
+
                 @endphp
                 @if ($type=='web')
                      <a class="dropdown-item" href="{{ route('dashboard.settings.index') }}"><i class="fas fa-cogs"></i>{{ trans('main_trans.Settings') }}</a>
                 @else
-                    <a class="dropdown-item" href="{{ route('dashboard.settings.index') }}"><i class="text-warning ti-user"></i>Profile</a>
+                    <a class="dropdown-item" href=""><i class="text-warning ti-user"></i>Profile</a>
 
                 @endif
 

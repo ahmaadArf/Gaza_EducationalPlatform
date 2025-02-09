@@ -26,11 +26,13 @@ use App\Http\Controllers\Dashboard\Students\Fees\ReceiptStudentController;
 
 
 require __DIR__.'/auth.php';
-Route::get('/', [DashboardController::class,'selection'])->middleware('guest');
-Route::get('/login/{type}',[DashboardController::class,'loginForm'])->middleware('guest')->name('login.show');
+require __DIR__ . '/teacher.php';
+
+Route::get('/', [DashboardController::class,'selection'])->middleware('guest:web,teacher');
+Route::get('/login/{type}',[DashboardController::class,'loginForm'])->middleware('guest:web,teacher')->name('login.show');
 
 Route::prefix(LaravelLocalization::setLocale())->middleware(['localeSessionRedirect', 'localizationRedirect', 'localeViewPath'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth:web')->name('dashboard');
     Route::prefix('dashboard')->middleware('auth:web')->name('dashboard.')->group(function () {
     Route::resource('grades', GradeController::class);
     Route::resource('classrooms', ClassroomController::class);
@@ -67,8 +69,8 @@ Route::prefix(LaravelLocalization::setLocale())->middleware(['localeSessionRedir
 });
 Route::get('ar/dashboard/add_parent', function () {
     return view('livewire.show_Form');
-})->middleware('auth')->name('add_parent_ar');
+})->middleware('auth:web')->name('add_parent_ar');
 Route::get('en/dashboard/add_parent', function () {
     return view('livewire.show_Form');
-})->middleware('auth')->name('add_parent_en');
+})->middleware('auth:web')->name('add_parent_en');
 

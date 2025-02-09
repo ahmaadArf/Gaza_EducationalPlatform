@@ -53,6 +53,7 @@ return [
     'hiring_date' => 'Hiring Date',
     'specialization' => 'Specialization',
     'date_added' => 'Date Added',
+    'welcome'=>'Welcome',
 
     // Parent Information
     'guardian_name' => 'Guardian Name',

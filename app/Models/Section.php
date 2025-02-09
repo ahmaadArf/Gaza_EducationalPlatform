@@ -20,7 +20,7 @@ class Section extends Model
     }
     public function Grades()
     {
-        return $this->belongsTo(Grade::class);
+        return $this->belongsTo(Grade::class,'grade_id');
     }
     public function teachers()
     {
