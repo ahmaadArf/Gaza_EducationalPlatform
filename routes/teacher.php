@@ -11,7 +11,10 @@ Route::prefix(LaravelLocalization::setLocale())->middleware(['localeSessionRedir
 
         Route::get('/',[TeacherDashboardController::class,'index'])->name('index');
         Route::get('sections',[TeacherDashboardController::class,'sections'])->name('sections');
-
+        Route::get('students',[TeacherDashboardController::class,'students'])->name('students.index');
+        Route::post('attendance',[TeacherDashboardController::class,'attendance'])->name('attendance');
+        Route::get('attendance_report',[TeacherDashboardController::class,'attendanceReport'])->name('attendance.report');
+        Route::post('attendance_report',[TeacherDashboardController::class,'attendanceSearch'])->name('attendance.search');
     });
 
 });

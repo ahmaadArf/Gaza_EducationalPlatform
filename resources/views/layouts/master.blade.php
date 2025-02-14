@@ -41,7 +41,13 @@
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right ">
-                <li class="breadcrumb-item"><a href="{{ url('/dashboard') }}" class="default-color">{{trans('main_trans.Dashboard')}}</a></li>
+                @php
+
+                $route='dashboard';
+                if(Auth::guard('teacher')->check())$route='teacher.dashboard.index';
+
+                @endphp
+                <li class="breadcrumb-item"><a href="{{ route($route) }}" class="default-color">{{trans('main_trans.Dashboard')}}</a></li>
                 <li class="breadcrumb-item active">@yield('PageTitle')</li>
             </ol>
         </div>
