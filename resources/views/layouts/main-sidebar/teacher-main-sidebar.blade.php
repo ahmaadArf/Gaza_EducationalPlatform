@@ -23,7 +23,14 @@
             <a href="{{ route('teacher.dashboard.students.index') }}"><i class="fas fa-user-graduate"></i><span
                     class="right-nav-text">{{ trans('main_trans.students') }}</span></a>
         </li>
-        <!-- sections-->
+
+        <!-- subjects-->
+        <li>
+            <a href="{{route('teacher.dashboard.subjects.index')}}"><i class="fas fa-book-open"></i><span
+                class="right-nav-text">{{ trans('subject.subjects') }}</span></a>
+        </li>
+
+        <!-- reports-->
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#sections-menu1">
                 <div class="pull-left"><i class="fas fa-file-alt"></i><span class="right-nav-text">{{ trans('attendance.reports') }}</span></div>

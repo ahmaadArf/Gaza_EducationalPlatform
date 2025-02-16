@@ -14,6 +14,12 @@ return [
     'subject_name_en' => 'اسم المادة باللغة الإنجليزية',
     'Processes'=>'العمليات',
     'edit_subject' => 'تعديل مادة دراسية ',
-
+    'course_content' => 'عرض محتوى المادة',
+    'add_new_content' => 'إضافة محتوى جديد',
+    'subject'=>'مادة',
+    'title' => 'العنوان',
+    'link' => 'الرابط',
+    'notes' => 'الملاحظات',
+    'edit_content' => 'تعديل محتوى ',
 
 ];

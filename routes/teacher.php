@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use App\Http\Controllers\Dashboard\Teacher\Dashboard\SubjectController;
 use App\Http\Controllers\Dashboard\Teacher\Dashboard\TeacherDashboardController;
 
 
@@ -15,6 +16,7 @@ Route::prefix(LaravelLocalization::setLocale())->middleware(['localeSessionRedir
         Route::post('attendance',[TeacherDashboardController::class,'attendance'])->name('attendance');
         Route::get('attendance_report',[TeacherDashboardController::class,'attendanceReport'])->name('attendance.report');
         Route::post('attendance_report',[TeacherDashboardController::class,'attendanceSearch'])->name('attendance.search');
+        Route::resource('subjects', SubjectController::class);
     });
 
 });
