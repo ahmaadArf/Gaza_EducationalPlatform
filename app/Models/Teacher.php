@@ -27,6 +27,14 @@ class Teacher extends Authenticatable
     {
         return $this->belongsToMany(Section::class,'teacher_section');
     }
+    public function Quizzes()
+    {
+        return $this->hasMany(Quizze::class);
+    }
+    public function Subjects()
+    {
+        return $this->hasMany(Subject::class);
+    }
 
 
 }

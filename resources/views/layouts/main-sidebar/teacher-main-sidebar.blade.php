@@ -29,6 +29,19 @@
             <a href="{{route('teacher.dashboard.subjects.index')}}"><i class="fas fa-book-open"></i><span
                 class="right-nav-text">{{ trans('subject.subjects') }}</span></a>
         </li>
+        <!-- الاختبارات-->
+
+        <li>
+            <a href="{{route('teacher.dashboard.quizzes.index')}}"><i class="fas fa-chalkboard"></i><span
+                class="right-nav-text">{{ trans('main_trans.Exams') }}</span></a>
+        </li>
+
+        <!-- Online classes-->
+        <li>
+            <a href="{{route('teacher.dashboard.online_zoom_classes.index')}}"><i class="fas fa-video"></i><span
+                class="right-nav-text">{{trans('main_trans.Onlineclasses')}}</span></a>
+        </li>
+
 
         <!-- reports-->
         <li>

@@ -1,14 +1,13 @@
 @extends('layouts.master')
 @section('css')
-
 @section('title')
-    {{ __('quiz.edit_test') }}: {{$quizz->name}}
+    {{ __('quiz.edit_test') }}:  {{$quizz->name}}
 @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
 @section('PageTitle')
-    {{ __('quiz.edit_test') }}: {{$quizz->name}}
+    {{ __('quiz.edit_test') }}:  {{$quizz->name}}
 @stop
 <!-- breadcrumb -->
 @endsection
@@ -30,7 +29,7 @@
                     <div class="col-xs-12">
                         <div class="col-md-12">
                             <br>
-                            <form action="{{route('dashboard.quizzes.update','test')}}" method="post">
+                            <form action="{{route('teacher.dashboard.quizzes.update','test')}}" method="post">
                                 @csrf
                                 @method('PUT')
                                 <div class="form-row">
@@ -61,24 +60,13 @@
                                         </div>
                                     </div>
 
-                                    <div class="col">
-                                        <div class="form-group">
-                                            <label for="Grade_id"> {{ __('quiz.teacher_name') }} : <span class="text-danger">*</span></label>
-                                            <select class="custom-select mr-sm-2" name="teacher_id">
-                                                @foreach($teachers as $teacher)
-                                                    <option  value="{{ $teacher->id }}" {{$teacher->id == $quizz->teacher_id ? "selected":""}}>{{ $teacher->name }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-
                                 </div>
 
                                 <div class="form-row">
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="Grade_id">{{trans('quiz.educational_stage')}} : <span class="text-danger">*</span></label>
+                                            <label for="Grade_id">{{trans('Students_trans.Grade')}} : <span class="text-danger">*</span></label>
                                             <select class="custom-select mr-sm-2" name="Grade_id">
                                                 @foreach($grades as $grade)
                                                     <option  value="{{ $grade->id }}" {{$grade->id == $quizz->grade_id ? "selected":""}}>{{ $grade->name }}</option>
@@ -89,15 +77,15 @@
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="Classroom_id">{{trans('quiz.classroom')}} : <span class="text-danger">*</span></label>
+                                            <label for="Classroom_id">{{trans('Students_trans.classrooms')}} : <span class="text-danger">*</span></label>
                                             <select class="custom-select mr-sm-2" name="Classroom_id">
-                                                <option value="{{$quizz->classroom_id}}">{{$quizz->classroom->name}}</option> </select>
+                                                <option value="{{$quizz->classroom_id}}">{{$quizz->classroom->name}}</option>                                            </select>
                                         </div>
                                     </div>
 
                                     <div class="col">
                                         <div class="form-group">
-                                            <label for="section_id">{{trans('quiz.section')}} : </label>
+                                            <label for="section_id">{{trans('Students_trans.section')}} : </label>
                                             <select class="custom-select mr-sm-2" name="section_id">
                                                 <option value="{{$quizz->section_id}}">{{$quizz->section->name}}</option>
                                             </select>
@@ -115,28 +103,5 @@
     <!-- row closed -->
 @endsection
 @section('js')
-    @toastr_js
-    @toastr_render
-    <script>
-        $(document).ready(function () {
-            $('select[name="Grade_id"]').on('change', function () {
-                var Grade_id = $(this).val();
-                if (Grade_id) {
-                    $.ajax({
-                        url: "{{ URL::to('dashboard/classes') }}/" + Grade_id,
-                        type: "GET",
-                        dataType: "json",
-                        success: function (data) {
-                            $('select[name="Class_id"]').empty();
-                            $.each(data, function (key, value) {
-                                $('select[name="Class_id"]').append('<option value="' + key + '">' + value + '</option>');
-                            });
-                        },
-                    });
-                } else {
-                    console.log('AJAX load did not work');
-                }
-            });
-        });
-    </script>
+
 @endsection
