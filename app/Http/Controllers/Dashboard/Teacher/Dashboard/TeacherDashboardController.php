@@ -13,7 +13,10 @@ use Illuminate\Support\Facades\Auth;
 class TeacherDashboardController extends Controller
 {
     public function index()  {
-        return view('pages.Teachers.dashboard.index');
+        $ids = Teacher::findorFail(Auth::user()->id)->Sections()->pluck('section_id');
+        $data['count_sections']= $ids->count();
+        $data['count_students']= Student::whereIn('section_id',$ids)->count();
+        return view('pages.Teachers.dashboard.dashboard',$data);
     }
 
     public function sections()

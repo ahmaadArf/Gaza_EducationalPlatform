@@ -56,5 +56,11 @@
 
         </li>
 
+        <!-- الملف الشخصي-->
+        <li>
+            <a href="{{route('teacher.dashboard.profile.show')}}"><i class="fas fa-id-card-alt"></i><span
+                    class="right-nav-text">{{ trans('profile.profile') }} </span></a>
+        </li>
+
     </ul>
 </div>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\Dashboard\Students\StudentController;
 use App\Http\Controllers\Dashboard\Teacher\Dashboard\QuizzController;
+use App\Http\Controllers\Dashboard\Teacher\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\Teacher\Dashboard\SubjectController;
 use App\Http\Controllers\Dashboard\Teacher\Dashboard\QuestionController;
 use App\Http\Controllers\Dashboard\Teacher\Dashboard\TeacherDashboardController;
@@ -27,7 +28,8 @@ Route::prefix(LaravelLocalization::setLocale())->middleware(['localeSessionRedir
         Route::get('/Get_Sections/{id}', [StudentController::class,'Get_Sections']);
         Route::get('student_quizze/{id}',[QuizzController::class,'student_quizze'])->name('student.quizze');
         Route::resource('online_zoom_classes', OnlineZoomClassesController::class);
-
+        Route::get('profile', [ProfileController::class,'index'])->name('profile.show');
+        Route::post('profile/{id}',[ProfileController::class,'update'])->name('profile.update');
 
     });
 

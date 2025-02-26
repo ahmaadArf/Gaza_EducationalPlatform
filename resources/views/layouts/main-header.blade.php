@@ -127,7 +127,7 @@ header start-->
                 @if ($type=='web')
                      <a class="dropdown-item" href="{{ route('dashboard.settings.index') }}"><i class="fas fa-cogs"></i>{{ trans('main_trans.Settings') }}</a>
                 @else
-                    <a class="dropdown-item" href=""><i class="text-warning ti-user"></i>Profile</a>
+                    <a class="dropdown-item" href="{{ route('teacher.dashboard.profile.show') }}"><i class="text-warning ti-user"></i>{{ trans('profile.profile') }}</a>
 
                 @endif
 

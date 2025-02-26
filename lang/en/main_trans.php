@@ -54,6 +54,7 @@ return [
     'specialization' => 'Specialization',
     'date_added' => 'Date Added',
     'welcome'=>'Welcome',
+    'sections_count' => 'Section Count ',
 
     // Parent Information
     'guardian_name' => 'Guardian Name',

@@ -38,6 +38,7 @@ return [
     'Copyright' => 'جميع الحقوق محفوظة ',
     'school_management_dashboard' => 'لوحة تحكم إدارة المدرسة',
     'students_count' => 'عدد الطلاب',
+    'sections_count' => 'عدد الاقسام',
     'teachers_count' => 'عدد المعلمين',
     'guardians_count' => 'عدد أولياء الأمور',
     'classes_count' => 'عدد الفصول الدراسية',
