@@ -10,6 +10,9 @@
             @if (auth('teacher')->check())
                 @include('layouts.main-sidebar.teacher-main-sidebar')
             @endif
+            @if (auth('student')->check())
+                @include('layouts.main-sidebar.student-main-sidebar')
+            @endif
 
 
 

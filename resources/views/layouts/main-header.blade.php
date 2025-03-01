@@ -122,12 +122,16 @@ header start-->
                     $type='web';
 
                     if(Auth::guard('teacher')->check())$type='teacher';
+                    if(Auth::guard('student')->check())$type='student';
+
 
                 @endphp
                 @if ($type=='web')
                      <a class="dropdown-item" href="{{ route('dashboard.settings.index') }}"><i class="fas fa-cogs"></i>{{ trans('main_trans.Settings') }}</a>
-                @else
+                @elseif($type=='teacher')
                     <a class="dropdown-item" href="{{ route('teacher.dashboard.profile.show') }}"><i class="text-warning ti-user"></i>{{ trans('profile.profile') }}</a>
+                @elseif($type=='student')
+                <a class="dropdown-item" href=""><i class="text-warning ti-user"></i>{{ trans('profile.profile') }}</a>
 
                 @endif
 

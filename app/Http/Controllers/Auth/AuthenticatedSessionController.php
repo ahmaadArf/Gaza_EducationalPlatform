@@ -28,6 +28,9 @@ class AuthenticatedSessionController extends Controller
         if ($request->type == 'teacher'){
             $guardName= 'teacher';
         }
+        elseif ($request->type == 'student'){
+            $guardName= 'student';
+        }
         else{
             $guardName= 'web';
         }
@@ -38,6 +41,9 @@ class AuthenticatedSessionController extends Controller
 
                 if ($request->type == 'teacher') {
                     return redirect()->route('teacher.dashboard.index');
+                }
+                elseif ($request->type == 'student') {
+                    return redirect()->route('student.dashboard.index');
                 }
                 else {
                     return redirect()->route('dashboard');

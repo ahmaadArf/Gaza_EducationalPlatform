@@ -45,6 +45,7 @@
 
                 $route='dashboard';
                 if(Auth::guard('teacher')->check())$route='teacher.dashboard.index';
+                if(Auth::guard('student')->check())$route='student.dashboard.index';
 
                 @endphp
                 <li class="breadcrumb-item"><a href="{{ route($route) }}" class="default-color">{{trans('main_trans.Dashboard')}}</a></li>

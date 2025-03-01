@@ -27,6 +27,7 @@ use App\Http\Controllers\Dashboard\Students\Fees\ReceiptStudentController;
 
 require __DIR__.'/auth.php';
 require __DIR__ . '/teacher.php';
+require __DIR__ . '/student.php';
 
 Route::get('/', [DashboardController::class,'selection'])->middleware('guest:web,teacher');
 Route::get('/login/{type}',[DashboardController::class,'loginForm'])->middleware('guest:web,teacher')->name('login.show');

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Grade;
 use App\Models\Topic;
+use App\Models\Quizze;
 use App\Models\Teacher;
 use App\Models\Classroom;
 use Illuminate\Database\Eloquent\Model;
@@ -33,6 +34,10 @@ class Subject extends Model
     public function topics()
     {
         return $this->hasMany(Topic::class);
+    }
+    public function quizzes()
+    {
+        return $this->hasMany(Quizze::class);
     }
 
 }
