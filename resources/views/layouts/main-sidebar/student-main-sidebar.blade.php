@@ -17,6 +17,12 @@
                 class="right-nav-text">{{ trans('subject.subjects') }}</span></a>
         </li>
 
+        <!-- الامتحانات-->
+        <li>
+            <a href="{{route('student.dashboard.student_exams.index')}}"><i class="fas fa-book-open"></i><span
+                    class="right-nav-text">{{ trans('main_trans.Exams') }}</span></a>
+        </li>
+
 
 
     </ul>

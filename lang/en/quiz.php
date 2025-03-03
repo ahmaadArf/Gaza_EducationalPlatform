@@ -15,9 +15,10 @@ return [
     'test_name_ar' => 'Arabic Quiz Name',
     'test_name_en' => 'English Quiz Name',
     'subject' => 'Subject',
-
-
-
-
+    'login' => 'Login',
+    'test_score' => 'Quiz Score',
+    'confirm_test_start' => 'Are you sure you want to start the test?',
+    'take_test' => 'Take Quiz',
+    'confirm_test_submission' => 'Are you sure you want to submit the Quiz?',
 
 ];

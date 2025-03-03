@@ -125,6 +125,32 @@
                                                     @endif
                                                 @endforeach
 
+                                                @foreach ($quizes as $quize)
+                                                @if ($quize->created_at >= $week->start && $quize->created_at <= $week->end)
+                                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                        <div>
+                                                            <h4 class="text-muted mb-3">
+                                                                <i class="fas fa-file-alt text-info me-2"></i>
+                                                                {{ $quize->name }}
+                                                            </h4>
+                                                            @if($quize->degree)
+                                                                    <h4 class="text-dark mb-0"> {{ __('subject.the_grade_of_this_test') }}  {{ $quize->degree->score }}</h4>
+
+
+                                                            @else
+                                                            <a href="{{route('student.dashboard.quiz.show',$quize->id)}}"
+                                                                class="btn btn-outline-info " role="button"
+                                                                aria-pressed="true" onclick="alertExam()">{{ __('subject.click_here_to_apply_for_the_test') }}
+                                                                <i class="fas fa-person-booth"></i></a>
+                                                            @endif
+
+
+                                                        </div>
+                                                    </li>
+                                                    <br>
+                                                @endif
+                                            @endforeach
+
 
                                             </ul>
                                         </div>
@@ -147,7 +173,7 @@
 @section('js')
 <script>
     function alertExam() {
-        alert(" هل انت متاكد ببدا الاختبار؟");
+        alert("{{ __('quiz.confirm_test_start') }}");
     }
 </script>
 @endsection

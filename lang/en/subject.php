@@ -20,6 +20,8 @@ return [
     'link' => 'Link',
     'notes' => 'Notes',
     'edit_content' => 'Edit Topic',
+    'the_grade_of_this_test'=>'The grade of this test',
+    'click_here_to_apply_for_the_test'=>'Click here to apply for the test',
 
 
 ];

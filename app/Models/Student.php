@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Grade;
 use App\Models\Image;
+use App\Models\Degree;
 use App\Models\Gender;
 use App\Models\Section;
 use App\Models\MyParent;
@@ -59,5 +60,9 @@ class Student extends Authenticatable
     public function attendance()
     {
         return $this->hasMany(Attendance::class, 'student_id');
+    }
+    public function degrees()
+    {
+        return $this->hasMany(Degree::class, 'student_id');
     }
 }

@@ -21,5 +21,8 @@ return [
     'link' => 'الرابط',
     'notes' => 'الملاحظات',
     'edit_content' => 'تعديل محتوى ',
+    'the_grade_of_this_test'=>'درجة هذا الاختبار',
+    'click_here_to_apply_for_the_test'=>'اضغط هنا للتقديم للاختبار',
+
 
 ];
