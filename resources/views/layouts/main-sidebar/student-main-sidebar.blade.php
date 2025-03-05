@@ -23,7 +23,17 @@
                     class="right-nav-text">{{ trans('main_trans.Exams') }}</span></a>
         </li>
 
+         <!-- الدرجات-->
+         <li>
+            <a href="{{route('student.dashboard.final-degree.index')}}"><i class="fas fa-pen"></i><span
+                    class="right-nav-text">{{ __('degree.degree') }}</span></a>
+        </li>
 
+        <!-- profile-->
+        <li>
+            <a href="{{route('student.dashboard.profile.index')}}"><i class="fas fa-id-card-alt"></i><span
+                    class="right-nav-text">{{ trans('profile.profile') }}  </span></a>
+        </li>
 
     </ul>
 </div>

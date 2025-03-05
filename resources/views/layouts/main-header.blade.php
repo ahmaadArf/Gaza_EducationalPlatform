@@ -131,7 +131,7 @@ header start-->
                 @elseif($type=='teacher')
                     <a class="dropdown-item" href="{{ route('teacher.dashboard.profile.show') }}"><i class="text-warning ti-user"></i>{{ trans('profile.profile') }}</a>
                 @elseif($type=='student')
-                <a class="dropdown-item" href=""><i class="text-warning ti-user"></i>{{ trans('profile.profile') }}</a>
+                <a class="dropdown-item" href="{{route('student.dashboard.profile.index')}}"><i class="text-warning ti-user"></i>{{ trans('profile.profile') }}</a>
 
                 @endif
 

@@ -1,11 +1,14 @@
 <?php
 
+
 use App\Models\Subject;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\Dashboard\Students\Dashboard\ExamsController;
+use App\Http\Controllers\Dashboard\Students\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\Students\Dashboard\SubjectController;
+use App\Http\Controllers\Dashboard\Students\Dashboard\finalDegreeController;
 
 Route::prefix(LaravelLocalization::setLocale())
 ->middleware(['localeSessionRedirect', 'localizationRedirect', 'localeViewPath','auth:student'])->group(function () {
@@ -22,6 +25,8 @@ Route::prefix(LaravelLocalization::setLocale())
     Route::get('/quiz/{quizze_id}/{question_index?}', [ExamsController::class, 'show'])->name('quiz.show');
     Route::resource('student_exams', ExamsController::class);
     Route::post('/quiz/{quizze_id}/{question_index}/answer', [ExamsController::class, 'storeAnswer'])->name('quiz.answer');
+    Route::resource('final-degree', finalDegreeController::class);
+    Route::resource('profile', ProfileController::class);
 
 
     });
