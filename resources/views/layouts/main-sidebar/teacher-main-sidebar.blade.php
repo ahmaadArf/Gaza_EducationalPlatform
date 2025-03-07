@@ -56,6 +56,12 @@
 
         </li>
 
+        <!-- رصد الدرجات  -->
+        <li>
+            <a href="{{route('teacher.dashboard.final-degree.index')}}"><i class="fas fa-id-card-alt"></i><span
+                    class="right-nav-text"> {{ __('degree.grades_tracking')}} </span></a>
+        </li>
+
         <!-- الملف الشخصي-->
         <li>
             <a href="{{route('teacher.dashboard.profile.show')}}"><i class="fas fa-id-card-alt"></i><span

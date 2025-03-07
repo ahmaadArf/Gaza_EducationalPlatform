@@ -9,7 +9,10 @@ return [
     'midterm_grade' => 'Midterm Grade',
     'final_grade' => 'Final Grade',
     'total' => 'Total',
-    'degree'=>'Degrees'
+    'degree'=>'Degrees',
+    'student_grades_tracking'=>'Student Grades Tracking',
+    'list_of_students'=>'List of Students',
+    'grades_tracking'=>'Grades Tracking',
 
 
 

@@ -10,6 +10,7 @@ use App\Models\Section;
 use App\Models\MyParent;
 use App\Models\Classroom;
 use App\Models\Attendance;
+use App\Models\FinalDegree;
 use App\Models\Nationalitie;
 use App\Models\StudentAccount;
 use Illuminate\Database\Eloquent\Model;
@@ -64,5 +65,9 @@ class Student extends Authenticatable
     public function degrees()
     {
         return $this->hasMany(Degree::class, 'student_id');
+    }
+    public function finaldegrees()
+    {
+        return $this->hasMany(FinalDegree::class, 'student_id');
     }
 }

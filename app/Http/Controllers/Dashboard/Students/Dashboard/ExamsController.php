@@ -86,3 +86,4 @@ protected function calculateScore($quizze_id, $session_data)
 
 
 }
+

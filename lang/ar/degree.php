@@ -9,6 +9,9 @@ return [
     'midterm_grade' => 'درجة النصفي',
     'final_grade' => 'درجة النهائي',
     'total' => 'المجموع',
-    'degree'=>'الدرجات'
+    'degree'=>'الدرجات',
+    'student_grades_tracking'=>'رصد درجات الطلبة',
+    'list_of_students'=>' قائمة   للطلاب',
+    'grades_tracking'=>'رصد الدرجات',
 ];
 

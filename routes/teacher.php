@@ -7,6 +7,7 @@ use App\Http\Controllers\Dashboard\Teacher\Dashboard\QuizzController;
 use App\Http\Controllers\Dashboard\Teacher\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\Teacher\Dashboard\SubjectController;
 use App\Http\Controllers\Dashboard\Teacher\Dashboard\QuestionController;
+use App\Http\Controllers\Dashboard\Teacher\Dashboard\finalDegreeController;
 use App\Http\Controllers\Dashboard\Teacher\Dashboard\TeacherDashboardController;
 use App\Http\Controllers\Dashboard\Teacher\Dashboard\OnlineZoomClassesController;
 
@@ -30,6 +31,7 @@ Route::prefix(LaravelLocalization::setLocale())->middleware(['localeSessionRedir
         Route::resource('online_zoom_classes', OnlineZoomClassesController::class);
         Route::get('profile', [ProfileController::class,'index'])->name('profile.show');
         Route::post('profile/{id}',[ProfileController::class,'update'])->name('profile.update');
+        Route::resource('final-degree', finalDegreeController::class);
 
     });
 
