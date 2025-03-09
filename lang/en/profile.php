@@ -8,6 +8,7 @@ return [
     'show_password'=>'Show Password',
     'teacher'=>'Teacher',
     'edit_data'=>' Edit Data',
-    'student'=>'Student'
+    'student'=>'Student',
+    'parent'=>'Parent'
 
 ];

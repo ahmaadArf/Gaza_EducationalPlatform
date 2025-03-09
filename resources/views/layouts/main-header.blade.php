@@ -74,64 +74,50 @@ header start-->
                         days</small> </a>
             </div>
         </li>
-        {{-- <li class="nav-item dropdown ">
-            <a class="nav-link top-nav" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                aria-expanded="true"> <i class=" ti-view-grid"></i> </a>
-            <div class="dropdown-menu dropdown-menu-right dropdown-big">
-                <div class="dropdown-header">
-                    <strong>Quick Links</strong>
-                </div>
-                <div class="dropdown-divider"></div>
-                <div class="nav-grid">
-                    <a href="#" class="nav-grid-item"><i class="ti-files text-primary"></i>
-                        <h5>New Task</h5>
-                    </a>
-                    <a href="#" class="nav-grid-item"><i class="ti-check-box text-success"></i>
-                        <h5>Assign Task</h5>
-                    </a>
-                </div>
-                <div class="nav-grid">
-                    <a href="#" class="nav-grid-item"><i class="ti-pencil-alt text-warning"></i>
-                        <h5>Add Orders</h5>
-                    </a>
-                    <a href="#" class="nav-grid-item"><i class="ti-truck text-danger "></i>
-                        <h5>New Orders</h5>
-                    </a>
-                </div>
-            </div>
-        </li> --}}
+        @php
+        $type='web';
+
+        if(Auth::guard('teacher')->check())$type='teacher';
+        if(Auth::guard('student')->check())$type='student';
+        if(Auth::guard('parent')->check())$type='parent';
+
+        @endphp
         <li class="nav-item dropdown mr-30">
             <a class="nav-link nav-pill user-avatar" data-toggle="dropdown" href="#" role="button"
                 aria-haspopup="true" aria-expanded="false">
-                {{-- <img src="{{ URL::asset('assets/images/teacher.png') }}" alt="avatar"> --}}
-                <img src="https://ui-avatars.com/api/?name={{ Auth::user()->name }}" alt="avatar">
+                @if($type=='parent')
+                <img src="https://ui-avatars.com/api/?name={{ Auth::user()->name_Father }}" alt="avatar">
 
+                @else
+                <img src="https://ui-avatars.com/api/?name={{ Auth::user()->name }}" alt="avatar">
+                @endif
 
             </a>
+
             <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-header">
                     <div class="media">
                         <div class="media-body">
+                            @if($type=='parent')
+                            <h5 class="mt-0 mb-0">{{ Auth::user()->name_Father }}</h5>
+                            <span>{{ Auth::user()->email }}</span>
+                            @else
                             <h5 class="mt-0 mb-0">{{ Auth::user()->name }}</h5>
                             <span>{{ Auth::user()->email }}</span>
+                            @endif
                         </div>
                     </div>
                 </div>
                 <div class="dropdown-divider"></div>
-                @php
-                    $type='web';
 
-                    if(Auth::guard('teacher')->check())$type='teacher';
-                    if(Auth::guard('student')->check())$type='student';
-
-
-                @endphp
                 @if ($type=='web')
                      <a class="dropdown-item" href="{{ route('dashboard.settings.index') }}"><i class="fas fa-cogs"></i>{{ trans('main_trans.Settings') }}</a>
                 @elseif($type=='teacher')
                     <a class="dropdown-item" href="{{ route('teacher.dashboard.profile.show') }}"><i class="text-warning ti-user"></i>{{ trans('profile.profile') }}</a>
                 @elseif($type=='student')
                 <a class="dropdown-item" href="{{route('student.dashboard.profile.index')}}"><i class="text-warning ti-user"></i>{{ trans('profile.profile') }}</a>
+                @elseif($type=='parent')
+                <a class="dropdown-item" href="{{route('parent.dashboard.profile.show.parent')}}"><i class="text-warning ti-user"></i>{{ trans('profile.profile') }}</a>
 
                 @endif
 

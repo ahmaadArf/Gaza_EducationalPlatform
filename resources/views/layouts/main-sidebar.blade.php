@@ -14,6 +14,10 @@
                 @include('layouts.main-sidebar.student-main-sidebar')
             @endif
 
+            @if (auth('parent')->check())
+                @include('layouts.main-sidebar.parent-main-sidebar')
+            @endif
+
 
 
         </div>

@@ -8,6 +8,7 @@ return [
     'show_password'=>' اظهار كلمة المرور',
     'teacher'=>'معلم',
     'edit_data'=>'تعديل البيانات',
-    'student'=>'طالب'
+    'student'=>'طالب',
+     'parent'=>'ولي امر'
 
 ];

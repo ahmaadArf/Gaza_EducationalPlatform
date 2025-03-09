@@ -35,6 +35,9 @@ return [
     'Choose' => 'Choose',
     'Attachments' => 'Attachments',
     'Processes' => 'Processes',
+    'list_of_children'=>'List of Children',
+
+
 
 
 ];

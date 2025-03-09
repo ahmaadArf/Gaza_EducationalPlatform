@@ -38,6 +38,8 @@ return [
     'Choose' => 'اختيار من القائمة',
     'Attachments' => 'المرفقات',
     'Processes' => 'العمليات',
+    'list_of_children'=>'قائمة الابناء ',
+
 
 
 
