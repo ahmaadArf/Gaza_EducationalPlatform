@@ -17,6 +17,8 @@ return [
     'start_date' => 'Start Date',
     'date' => 'Date',
     'status' => 'Status',
-    'reports'=>'Reports'
+    'reports'=>'Reports',
+    'student'=>'Student'
+
 
 ];

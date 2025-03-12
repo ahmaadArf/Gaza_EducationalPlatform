@@ -13,5 +13,6 @@ return [
     'student_grades_tracking'=>'رصد درجات الطلبة',
     'list_of_students'=>' قائمة   للطلاب',
     'grades_tracking'=>'رصد الدرجات',
+    'student_name'=>'اسم الطالب'
 ];
 

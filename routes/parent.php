@@ -19,7 +19,9 @@ Route::prefix(LaravelLocalization::setLocale())
     Route::get('children', [ChildrenController::class,'index'])->name('sons.index');
     Route::get('profile/parent',[ChildrenController::class,'profile'])->name('profile.show.parent');
     Route::post('profile/parent/{id}',[ChildrenController::class,'update'])->name('profile.update.parent');
-
+    Route::get('results/{id}', [ChildrenController::class,'results'])->name('sons.results');
+    Route::get('attendances', [ChildrenController::class,'attendances'])->name('sons.attendances');
+    Route::post('attendances',[ChildrenController::class,'attendanceSearch'])->name('sons.attendance.search');
 
     });
 

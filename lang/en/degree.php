@@ -13,6 +13,8 @@ return [
     'student_grades_tracking'=>'Student Grades Tracking',
     'list_of_students'=>'List of Students',
     'grades_tracking'=>'Grades Tracking',
+    'student_name'=>'Student Name '
+
 
 
 

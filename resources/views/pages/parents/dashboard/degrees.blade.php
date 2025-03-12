@@ -1,14 +1,13 @@
 @extends('layouts.master')
 @section('css')
-
     @section('title')
-{{ __('Parent_trans.list_of_children') }}
+      {{__('degree.grades_report')}}
     @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
     @section('PageTitle')
-{{ __('Parent_trans.list_of_children') }}
+      {{__('degree.grades_report')}}
     @stop
     <!-- breadcrumb -->
 @endsection
@@ -33,29 +32,22 @@
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>{{trans('Students_trans.name')}}</th>
-                                            <th>{{trans('Students_trans.email')}}</th>
-                                            <th>{{trans('Students_trans.gender')}}</th>
-                                            <th>{{trans('Students_trans.Grade')}}</th>
-                                            <th>{{trans('Students_trans.classrooms')}}</th>
-                                            <th>{{trans('Students_trans.section')}}</th>
-                                            <th>{{trans('Students_trans.Processes')}}</th>
-
+                                            <th>{{__('degree.student_name')}} </th>
+                                            <th>{{__('degree.subject')}} </th>
+                                            <th> {{__('degree.midterm_grade')}} </th>
+                                            <th> {{__('degree.final_grade')}}</th>
+                                            <th> {{__('degree.total')}}</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($students as $student)
+                                        @foreach($degrees as $degree)
                                             <tr>
-                                                <td>{{ $loop->index+1 }}</td>
-                                                <td>{{$student->name}}</td>
-                                                <td>{{$student->email}}</td>
-                                                <td>{{$student->gender->name}}</td>
-                                                <td>{{$student->grade->name}}</td>
-                                                <td>{{$student->classroom->name}}</td>
-                                                <td>{{$student->section->name}}</td>
-                                                <td>
-                                                    <a class="dropdown-item" href="{{route('parent.dashboard.sons.results',$student->id)}}"><i style="color: #ffc107" class="far fa-eye "></i>&nbsp;عرض نتائج الاختبارات</a>
-                                                </td>
+                                                <td>{{ $loop->iteration}}</td>
+                                                <td>{{$degree->student->name}}</td>
+                                                <td>{{$degree->subject->name}}</td>
+                                                <td>{{$degree->mid}}</td>
+                                                <td>{{$degree->final}}</td>
+                                                <td>{{$degree->final + $degree->mid }}</td>
                                             </tr>
                                         @endforeach
                                     </table>
