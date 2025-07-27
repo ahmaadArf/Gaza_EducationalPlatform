@@ -9,6 +9,13 @@ class Grade extends Model
 {
     use HasTranslations;
     public $translatable = ['name'];
+    protected $fillable = [
+        'name',
+        'notes',
+    ];
+    protected $hidden = [
+        // 'password',
+    ];
     protected $guarded=[];
     public function Classrooms()
     {

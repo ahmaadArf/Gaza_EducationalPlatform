@@ -13,7 +13,15 @@ class Teacher extends Authenticatable
 {
     use HasTranslations;
     public $translatable = ['name'];
-    protected $guarded =[];
+    protected $fillable = [
+        'name',
+        'password',
+        'email',
+        'specialization_id',
+        'gender_id',
+        'joining_Date',
+        'address',
+    ];
 
     public function specializations()
     {
@@ -25,7 +33,7 @@ class Teacher extends Authenticatable
     }
     public function Sections()
     {
-        return $this->belongsToMany(Section::class,'teacher_section');
+        return $this->belongsToMany(Section::class, 'teacher_section');
     }
     public function Quizzes()
     {
@@ -35,6 +43,4 @@ class Teacher extends Authenticatable
     {
         return $this->hasMany(Subject::class);
     }
-
-
 }

@@ -58,6 +58,12 @@ return [
         ],
 
 
+        'user-api' => [
+            'driver' => 'sanctum',
+            'provider' => 'users',
+        ]
+
+
     ],
 
     /*
