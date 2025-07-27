@@ -23,20 +23,3 @@ Route::prefix('admin')->middleware(['auth:sanctum', 'auth.api:user-api'])->group
 });
 
 
-
-    // restful api //done
-
-
-    // request life cycle
-
-
-    // sunctum (package)
-    // - create token (access token) (bearer token)
-    // - get user current tokens
-    // - destroy token / tokens
-
-    // resources
-
-    // model binding //done
-
-    // eager loading (get data in one database session) //done
